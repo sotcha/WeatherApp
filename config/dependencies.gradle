@@ -1,0 +1,298 @@
+ext.versions = [
+
+        minSdk                   : 23,
+        compileSdk               : 30,
+        targetSdk                : 30,
+        buildTools               : '30.0.3',
+        gradleVersion            : '4.1.2',
+
+        /** Java **/
+        java                     : JavaVersion.VERSION_1_8,
+
+        /** Kotlin **/
+        kotlin                   : '1.4.21',
+        androidKtx               : '1.3.2',
+        androidMaterial          : '1.3.0',
+
+        activityKtx              : '1.2.0',
+
+        supportCore              : '1.3.2',
+        supportAppCompat         : '1.2.0',
+        constraintLayout         : '2.0.4',
+        fragmentKtx              : '1.3.0',
+
+        navigationVersion        : '2.3.3',
+
+        junit                    : '4.13.2',
+        androidXJunit            : '1.1.2',
+
+        espresso                 : '3.3.0',
+
+        lifecycleVersion         : '2.3.0',
+
+
+        hiltVersion              : '2.31.2-alpha',
+
+        multiDex                 : '2.0.1',
+
+        kotlinCoroutinesAndroid  : '1.3.9',
+// ---------------
+
+
+
+        supportDesign            : '1.3.0-rc01',
+
+
+
+
+        hamcrest                 : '1.3',
+        mockitoKotlin            : '2.2.0',
+        mockito                  : '3.4.4',
+
+        /** androidx lifecycle **/
+        lifecycleRuntime         : '2.2.0',
+        lifecycleCommonJava8     : '2.2.0',
+
+
+        /** gradle **/
+        sentryAndroidGradlePlugin: '1.7.34',
+        googleServicesGms        : '4.3.4',
+
+        /** libraries **/
+        adapterDelegates         : '3.1.0',
+        timber                   : '4.7.1',
+        butterKnife              : '10.2.1',
+        dagger                   : '2.29.1',
+        leakCanary               : '2.4',
+        lottie                   : '3.6.0',
+        retrofit                 : '2.9.0',
+        okHttp                   : '4.7.2',
+        gson                     : '2.8.5',
+        networkResponseAdapter   : '4.0.1',
+        room                     : '2.2.5',
+        shimmer                  : '0.5.0',
+        roundCornerProgressBar   : '2.1.1',
+
+        scrollingIndicator       : '1.2.1',
+        sentry                   : '2.1.7',
+        archCoreTesting          : '2.1.0',
+        flexbox                  : '2.0.1',
+        clickguard               : '258be5ddc7',
+        eventBus                 : '3.2.0',
+        firabeseBom              : '26.3.0',
+        coroutinesPlayServices   : '1.1.1',
+
+
+]
+
+ext.applyPlugins = [
+        googleServices_gms     : 'com.google.gms.google-services',
+        kotlinPlugin           : 'kotlin-android',
+        kapt                   : 'kotlin-kapt',
+        kotlinAndroidExtensions: 'kotlin-android-extensions',
+]
+
+ext.gradlePlugins = [
+        gradleBuildTools : "com.android.tools.build:gradle:$versions.gradleVersion",
+        kotlin           : "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
+        hilt             : "com.google.dagger:hilt-android-gradle-plugin:$versions.hiltVersion",
+
+
+
+        butterKnife      : "com.jakewharton:butterknife-gradle-plugin:$versions.butterKnife",
+        sentryPlugin     : "io.sentry:sentry-android-gradle-plugin:$versions.sentryAndroidGradlePlugin",
+        googleServicesGms: "com.google.gms:google-services:$versions.googleServicesGms"
+
+
+]
+
+ext.dependeciesUrls = [
+        clojars          : 'https://clojars.org/repo/',
+        jitpack          : 'https://www.jitpack.io',
+        amazonaws        : 'https://s3.amazonaws.com/repo.commonsware.com',
+        sonatypeSnapshots: 'https://oss.sonatype.org/content/repositories/snapshots/',
+        sonatypeReleases : 'https://oss.sonatype.org/content/repositories/releases/',
+        google           : 'https://maven.google.com',
+        afseMavenRepo    : 'http://nexus3.omnia.int:8082/repository/thirdparty'
+]
+
+
+ext.libraries = [
+        /**KOTLIN**/
+        kotlin                  : "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin",
+
+        /** Android KTX - https://developer.android.com/kotlin/ktx (ALWAYS USE THE SAME VERSION AS supportCore library) */
+        androidKtx              : "androidx.core:core-ktx:$versions.androidKtx",
+//        supportCore             : "androidx.core:core-ktx:$versions.supportCore",
+
+        /** support - https://developer.android.com/topic/libraries/support-library/index.html **/
+        supportAppCompat        : "androidx.appcompat:appcompat:$versions.supportAppCompat",
+
+
+        activityKtx             : "androidx.activity:activity-ktx:$versions.activityKtx",
+        fragmentKtx             : "androidx.fragment:fragment-ktx:$versions.fragmentKtx",
+
+        constraintLayout        : "androidx.constraintlayout:constraintlayout:$versions.constraintLayout",
+        androidMaterial         : "com.google.android.material:material:$versions.androidMaterial",
+
+
+
+        navigationFragment      : "androidx.navigation:navigation-fragment-ktx:$versions.navigationVersion",
+        navigationUi            : "androidx.navigation:navigation-ui-ktx:$versions.navigationVersion",
+
+
+        /** Junit - https://github.com/junit-team/junit4/wiki/Use-with-Gradle **/
+        junit                   : "junit:junit:$versions.junit",
+        androidTestJunit        : "androidx.test.ext:junit:$versions.androidXJunit",
+
+        /** Espresso Core for Espresso assertions and UI interactions **/
+        espressoCore            : "androidx.test.espresso:espresso-core:$versions.espresso",
+
+
+
+        lifecycleViewmodelKtx   : "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycleVersion",
+        lifecycleLivedataKtx    : "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycleVersion",
+        lifecycleRuntime        : "androidx.lifecycle:lifecycle-runtime:$versions.lifecycleVersion",
+        lifecycleCommonJava8    : "androidx.lifecycle:lifecycle-common-java8:$versions.lifecycleVersion",
+
+
+        // Hilt - https://dagger.dev/hilt/gradle-setup
+
+        hiltAndroid             : "com.google.dagger:hilt-android:$versions.hiltVersion",
+        hiltAndroidTesting      : "com.google.dagger:hilt-android-testing:$versions.hiltVersion",
+        hiltKapt                : "com.google.dagger:hilt-android-compiler:$versions.hiltVersion",
+
+        multiDex                : "androidx.multidex:multidex:$versions.multiDex",
+
+
+        /** Coroutines **/
+        kotlinCoroutinesCore : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.kotlinCoroutinesAndroid",
+        kotlinCoroutinesAndroid : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.kotlinCoroutinesAndroid",
+
+
+        //----------------------------------------------------------------------------
+
+
+        kotlinCoroutinesTest    : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$versions.kotlinCoroutinesAndroid",
+        supportAnnotations      : "androidx.annotation:annotation:$versions.supportAnnotations",
+        supportDesign           : "com.google.android.material:material:$versions.supportDesign",
+        supportRecyclerView     : "androidx.recyclerview:recyclerview:$versions.supportRecycler",
+        supportCardView         : "androidx.cardview:cardview:$versions.supportCardView",
+        customTabs              : "androidx.browser:browser:$versions.supportCustomTabs",
+        archCoreTesting         : "androidx.arch.core:core-testing:$versions.archCoreTesting",
+
+        /**androidx lifecycle **/
+
+
+        /** Mockito - https://github.com/mockito/mockito **/
+        mockitoCore             : "org.mockito:mockito-core:$versions.mockito",
+
+        /** mockito-kotlin - https://github.com/nhaarman/mockito-kotlin **/
+        mockitoKotlin           : "com.nhaarman.mockitokotlin2:mockito-kotlin:$versions.mockitoKotlin",
+
+        /** room - https://developer.android.com/topic/libraries/architecture/room **/
+        room                    : "androidx.room:room-runtime:$versions.room",
+        roomCompiler            : "androidx.room:room-compiler:$versions.room",
+        roomKtx                 : "androidx.room:room-ktx:$versions.room",
+        roomTest                : "androidx.room:room-testing:$versions.room",
+
+
+        /** javax annotations - https://mvnrepository.com/artifact/javax.annotation **/
+        javaxAnnotations        : "javax.annotation:jsr250-api:$versions.javaxAnnotations",
+
+        /** timber - https://github.com/JakeWharton/timber**/
+        timber                  : "com.jakewharton.timber:timber:$versions.timber",
+
+        /** adapter delegates - https://github.com/sockeqwe/AdapterDelegates **/
+        adapterDelegates        : "com.hannesdorfmann:adapterdelegates3:$versions.adapterDelegates",
+
+        /** butter knife - http://jakewharton.github.io/butterknife/ **/
+        butterKnife             : "com.jakewharton:butterknife:$versions.butterKnife",
+        butterKnifeCompiler     : "com.jakewharton:butterknife-compiler:$versions.butterKnife",
+
+        /** dagger - http://google.github.io/dagger/ **/
+        dagger                  : "com.google.dagger:dagger:$versions.dagger",
+        daggerCompiler          : "com.google.dagger:dagger-compiler:$versions.dagger",
+
+        /** leak canary - https://square.github.io/leakcanary/ **/
+        leakCanary              : "com.squareup.leakcanary:leakcanary-android:$versions.leakCanary",
+
+        /** Lottie - https://github.com/airbnb/lottie-android/releases */
+        lottie                  : "com.airbnb.android:lottie:$versions.lottie",
+
+        /** Retrofit - http://square.github.io/retrofit/ **/
+        retrofit                : "com.squareup.retrofit2:retrofit:$versions.retrofit",
+
+        /** Retrofit Gson Converter **/
+        retrofitGsonConverter   : "com.squareup.retrofit2:converter-gson:$versions.retrofit",
+
+        /** OkHttp client - https://github.com/square/okhttp **/
+        okHttp                  : "com.squareup.okhttp3:okhttp:$versions.okHttp",
+
+        gson                    : "com.google.code.gson:gson:$versions.gson",
+
+        /** OkHttp Logging Interceptor - https://github.com/square/okhttp/tree/master/okhttp-logging-interceptor **/
+        okHttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$versions.okHttp",
+
+        /** NetworkResponseAdapter - https://github.com/haroldadmin/NetworkResponseAdapter**/
+        networkResponseAdapter  : "com.github.haroldadmin:NetworkResponseAdapter:$versions.networkResponseAdapter",
+
+        /** Shimmer - http://facebook.github.io/shimmer-android/ **/
+        shimmer                 : "com.facebook.shimmer:shimmer:$versions.shimmer",
+
+        /**https://github.com/akexorcist/RoundCornerProgressBar**/
+        roundCornerProgressBar  : "com.akexorcist:round-corner-progress-bar:$versions.roundCornerProgressBar",
+
+        /** hamcrest - https://github.com/hamcrest/JavaHamcrest **/
+        hamcrest                : "org.hamcrest:hamcrest-all:$versions.hamcrest",
+
+
+        /** scrollingPagerIndicator - https://github.com/TinkoffCreditSystems/ScrollingPagerIndicator **/
+        scrollingIndicator      : "ru.tinkoff.scrollingpagerindicator:scrollingpagerindicator:$versions.scrollingIndicator",
+
+        /** sentry - error tracking software  - https://docs.sentry.io **/
+        sentry                  : "io.sentry:sentry-android:$versions.sentry",
+
+        /** flexbox - https://github.com/google/flexbox-layout **/
+        flexbox                 : "com.google.android:flexbox:$versions.flexbox",
+
+        /** click guard - https://github.com/fengdai/clickguard **/
+        clickguard              : "com.github.fengdai:clickguard:$versions.clickguard",
+
+        /** EventBus - https://github.com/greenrobot/EventBus **/
+        eventBus                : "org.greenrobot:eventbus:$versions.eventBus",
+
+        firebaseBom             : "com.google.firebase:firebase-bom:$versions.firabeseBom",
+        firebaseMessaging       : "com.google.firebase:firebase-messaging-ktx",
+        firebaseAnalytics       : "com.google.firebase:firebase-analytics-ktx",
+
+        coroutinesPlayServices  : "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$versions.coroutinesPlayServices"
+]
+
+def proguardPath = '../proguard/'
+
+ext.proguard = [
+        daggerRules  : proguardPath + 'proguard-dagger-rules.pro',
+        okhttp3Rules : proguardPath + 'proguard-okhttp3-rules.pro',
+        retrofit     : proguardPath + 'proguard-retrofit-rules.pro',
+        okio         : proguardPath + 'proguard-okio-rules.pro',
+        coroutines   : proguardPath + 'proguard-coroutines-rules.pro',
+        gson         : proguardPath + 'proguard-gson-rules.pro',
+        sentry       : proguardPath + 'proguard-sentry-rules.pro',
+        wizard       : proguardPath + 'proguard-wizard-rules.pro',
+        genericRules : proguardPath + 'proguard-generic-rules.pro',
+        eventBusRules: proguardPath + 'proguard-eventbus-rules.pro',
+]
+
+ext.vars = [
+        STRING : 'String',
+        BOOLEAN: 'boolean',
+        TRUE   : 'true',
+        FALSE  : 'false'
+]
+
+
+ext.configFlavorVars = [
+        /** the url endpoint **/
+        URL_ENDPOINT: "URL_ENDPOINT",
+]
