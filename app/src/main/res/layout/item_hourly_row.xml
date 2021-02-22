@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item_hourly_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/hourly_horizontal_padding"
+        android:paddingTop="@dimen/hourly_hour_item_vertical_padding"
+        android:paddingEnd="@dimen/hourly_horizontal_padding"
+        android:paddingBottom="@dimen/hourly_hour_item_vertical_padding">
+
+        <TextView
+            android:id="@+id/hour_time"
+            style="@style/HourlyHourValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="01:00" />
+
+
+        <TextView
+            android:id="@+id/hour_description"
+            style="@style/HourlyHourDescriptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/hour_image"
+            app:layout_constraintStart_toEndOf="@+id/hour_time"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Partly cloudy" />
+
+        <ImageView
+            android:id="@+id/hour_image"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/hour_temperature"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/wsymbol_0027_light_snow_showers_night" />
+
+        <TextView
+            android:id="@+id/hour_temperature"
+            style="@style/HourlyHourTemperatureTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="50dp"
+            app:layout_constraintBottom_toBottomOf="@+id/hour_image"
+            app:layout_constraintEnd_toStartOf="@id/hour_arrow"
+            app:layout_constraintTop_toTopOf="@+id/hour_image"
+            tools:text="-12°C" />
+
+        <ImageView
+            android:id="@+id/hour_arrow"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_arrow_drop_down_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:orientation="horizontal"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="hour_description,hour_temperature,hour_image,hour_time" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hourly_hour_item_vertical_padding"
+            android:clickable="false"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/barrier" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- This film is needed to get the click from recycler view, in order all the surface be clickable -->
+    <FrameLayout
+        android:id="@+id/film_for_click"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</FrameLayout>

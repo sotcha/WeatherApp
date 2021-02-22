@@ -1,0 +1,66 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
+
+    defaultConfig {
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility versions.java
+        targetCompatibility versions.java
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation project(':domain')
+
+    implementation libraries.kotlinCoroutinesCore
+    implementation libraries.kotlinCoroutinesAndroid
+    implementation libraries.kotlin
+    implementation libraries.androidKtx
+
+    implementation libraries.retrofit
+    implementation libraries.gson
+
+    implementation libraries.okHttp
+    implementation libraries.okHttpLoggingInterceptor
+    implementation libraries.workManager
+
+
+    implementation libraries.room
+    implementation libraries.roomKtx
+    kapt libraries.roomCompiler
+
+    testImplementation libraries.roomTest
+
+
+    kapt libraries.hiltKapt
+    implementation libraries.hiltAndroid
+
+    testImplementation libraries.junit
+
+    androidTestImplementation libraries.androidTestJunit
+    androidTestImplementation libraries.espressoCore
+}
