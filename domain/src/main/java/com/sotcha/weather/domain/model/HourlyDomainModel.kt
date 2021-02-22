@@ -5,12 +5,9 @@ package com.sotcha.weather.domain.model
  *
  */
 data class HourlyDomainModel(
-    val time: String,
-    val temperature: Int,
-    val feelsLikeTemperature: Int,
-    val windSpeed: Int,
-    val pressure: Int,
-    val humidity: Float, // Humidity in percentage
-    val weatherIconUrl: String,
-    val weatherDescription: String
+    /**
+     * Time of the day ie 0,1 ..17, 18
+     */
+    val time: Int,
+    val conditions: ConditionsDomailModel
 )

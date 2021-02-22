@@ -4,12 +4,14 @@ import com.sotcha.weather.domain.model.CityDomainModel
 import com.sotcha.weather.domain.repository.WeatherRepository
 import javax.inject.Inject
 
-class LoadWeatherForecastUseCase @Inject constructor(
-    private val weatherRepository: WeatherRepository
-) {
-    fun invoke(city: CityDomainModel) {
-        weatherRepository.getLocalWeather(city)
-    }
+/**
+ * Use case which loads the weather data for a city
+ *
+ */
+class LoadWeatherForecastUseCase @Inject constructor(private val weatherRepository: WeatherRepository) {
+
+    suspend operator fun invoke(city: CityDomainModel, loadHourly: Boolean = false) =
+        weatherRepository.getLocalWeather(city, loadHourly)
 
 
 }

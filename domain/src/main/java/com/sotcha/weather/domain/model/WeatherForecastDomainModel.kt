@@ -7,6 +7,6 @@ package com.sotcha.weather.domain.model
  * @property weather
  */
 data class WeatherForecastDomainModel(
-    val current: CurrentConditionDomainModel,
-    val weather: List<WeatherDomainModel>
+    val current: NowWeatherDomainModel?,
+    val weather: List<WeatherDomainModel>?
 )

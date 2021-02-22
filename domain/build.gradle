@@ -13,4 +13,6 @@ dependencies {
     implementation libraries.kotlin
     kapt libraries.hiltKapt
     implementation libraries.hiltAndroid
+    implementation libraries.kotlinCoroutinesCore
+
 }

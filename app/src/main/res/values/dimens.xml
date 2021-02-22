@@ -2,7 +2,41 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="nav_header_vertical_spacing">8dp</dimen>
-    <dimen name="nav_header_height">176dp</dimen>
-    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="section_header_text_size">25sp</dimen>
+    <dimen name="section_header_top_padding">16dp</dimen>
+    <dimen name="section_header_horizontal_padding">16dp</dimen>
+    <dimen name="section_header_bottom_padding">8dp</dimen>
+
+
+    <dimen name="section_subheader_text_size">18sp</dimen>
+    <dimen name="section_padding">8dp</dimen>
+
+    <dimen name="now_weather_description_text_size">20sp</dimen>
+    <dimen name="now_temp_text_size">70sp</dimen>
+    <dimen name="feels_temp_text_size">20sp</dimen>
+
+    <dimen name="current_conditions_item_label">14sp</dimen>
+    <dimen name="current_conditions_item_value">16sp</dimen>
+
+
+    <dimen name="hourly_horizontal_padding">16dp</dimen>
+    <dimen name="hourly_hour_item_vertical_padding">8dp</dimen>
+    <dimen name="hourly_header_day_name_text_size">20sp</dimen>
+    <dimen name="hourly_header_day_avg_temp_text_size">24sp</dimen>
+    <dimen name="hourly_header_day_min_temp_text_size">12sp</dimen>
+
+
+    <dimen name="hourly_hour_value_text_size">16sp</dimen>
+    <dimen name="hourly_hour_description_text_size">14sp</dimen>
+    <dimen name="hourly_hour_temp_text_size">16sp</dimen>
+
+    <dimen name="error_textsize">20sp</dimen>
+
+
+    <dimen name="search_item_name_text_size">20sp</dimen>
+    <dimen name="search_item_area_text_size">14sp</dimen>
+
+    <dimen name="search_row_horizontal_padding">16dp</dimen>
+
 </resources>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.App.TabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TabLayout</item>
+    </style>
+
+    <style name="ThemeOverlay.App.TabLayout" parent="">
+        <item name="colorPrimary">@color/white</item>
+
+        <item name="colorSurface">@color/primaryColor</item>
+        <item name="colorOnSurface">@color/white</item>
+    </style>
+
+    <style name="HeaderTextView">
+        <item name="android:paddingStart">@dimen/section_header_horizontal_padding</item>
+        <item name="android:paddingEnd">@dimen/section_header_horizontal_padding</item>
+        <item name="android:paddingTop">@dimen/section_header_top_padding</item>
+        <item name="android:paddingBottom">@dimen/section_header_bottom_padding</item>
+        <item name="android:textSize">@dimen/section_header_text_size</item>
+    </style>
+
+    <style name="SubHeaderTextView">
+        <item name="android:paddingStart">@dimen/section_header_horizontal_padding</item>
+        <item name="android:paddingEnd">@dimen/section_header_horizontal_padding</item>
+        <item name="android:paddingTop">@dimen/section_header_top_padding</item>
+        <item name="android:paddingBottom">@dimen/section_header_bottom_padding</item>
+        <item name="android:textSize">@dimen/section_subheader_text_size</item>
+    </style>
+
+    <style name="Section">
+        <item name="android:padding">@dimen/section_padding</item>
+        <item name="android:background">@color/sectionBackgroundColor</item>
+        <item name="android:elevation">1dp</item>
+    </style>
+
+    <style name="CurrentConditionsItemLabel">
+        <item name="android:textSize">@dimen/current_conditions_item_label</item>
+    </style>
+
+    <style name="CurrentConditionsItemValue">
+        <item name="android:textSize">@dimen/current_conditions_item_label</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="HourlyHeaderDayNameTextView">
+        <item name="android:textSize">@dimen/hourly_header_day_name_text_size</item>
+    </style>
+
+    <style name="HourlyHeaderDayAvgTempTextView">
+        <item name="android:textSize">@dimen/hourly_header_day_avg_temp_text_size</item>
+    </style>
+
+    <style name="HourlyHeaderDayMinTempTextView">
+        <item name="android:textSize">@dimen/hourly_header_day_min_temp_text_size</item>
+        <item name="android:textColor">@color/hourlyHeaderMinTemperatureColor</item>
+    </style>
+
+    <style name="HourlyHourValueTextView">
+        <item name="android:textSize">@dimen/hourly_hour_value_text_size</item>
+        <item name="android:textColor">@color/hourlyHourValueColor</item>
+    </style>
+
+
+    <style name="HourlyHourDescriptionTextView">
+        <item name="android:textSize">@dimen/hourly_hour_description_text_size</item>
+    </style>
+
+
+    <style name="HourlyHourTemperatureTextView">
+        <item name="android:textSize">@dimen/hourly_hour_temp_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ErrorView">
+        <item name="android:padding">16dp</item>
+        <item name="android:textSize">@dimen/error_textsize</item>
+    </style>
+
+
+    <style name="SearchItemNameTextView">
+        <item name="android:textSize">@dimen/search_item_name_text_size</item>
+    </style>
+
+    <style name="SearchItemAreaTextView">
+        <item name="android:textSize">@dimen/search_item_area_text_size</item>
+        <item name="android:textColor">@color/searhItemAreaColor</item>
+
+    </style>
+
+
+</resources>
